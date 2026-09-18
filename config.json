@@ -1,0 +1,41 @@
+{
+  "_comment": "每日行业资讯雷达配置。改这里就等于改日报内容，改完 push 当天生效。板块在 sections 下，源在 feeds 下；kind=gh_trending 走 GitHub 搜索 API，kind=json_sina 走新浪 7x24。",
+  "window_hours": 30,
+  "max_per_section": 8,
+  "keywords": {
+    "多模态": 3,
+    "推荐系统": 3,
+    "大模型": 3,
+    "LLM": 3,
+    "AI": 2,
+    "开源": 2,
+    "安全": 2
+  },
+  "sections": {
+    "ai":       { "name": "🤖 AI / 科技" },
+    "finance":  { "name": "💰 财经 / 商业" },
+    "security": { "name": "🔒 网络安全" },
+    "opensource": { "name": "🛠 开源 / 开发者" }
+  },
+  "feeds": [
+    { "section": "ai", "name": "Hacker News", "url": "https://news.ycombinator.com/rss", "prio": 5 },
+    { "section": "ai", "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "prio": 5 },
+    { "section": "ai", "name": "MIT 科技评论·AI", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed", "prio": 4 },
+    { "section": "ai", "name": "The Verge·AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "prio": 4 },
+
+    { "section": "finance", "name": "Yahoo 财经", "url": "https://finance.yahoo.com/news/rssindex", "prio": 4 },
+    { "section": "finance", "name": "金融时报 FT", "url": "https://www.ft.com/rss/home", "prio": 5 },
+    { "section": "finance", "name": "CNBC 头条", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html", "prio": 4 },
+    { "section": "finance", "name": "MarketWatch", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories", "prio": 4 },
+    { "section": "finance", "name": "新浪财经 7x24", "url": "https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2516&k=&num=50&page=1", "kind": "json_sina", "prio": 3 },
+
+    { "section": "security", "name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews", "prio": 5 },
+    { "section": "security", "name": "Krebs on Security", "url": "https://krebsonsecurity.com/feed/", "prio": 5 },
+    { "section": "security", "name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/", "prio": 4 },
+    { "section": "security", "name": "The Record", "url": "https://therecord.media/feed", "prio": 4 },
+
+    { "section": "opensource", "name": "GitHub 热门", "url": "https://api.github.com/search/repositories", "kind": "gh_trending", "prio": 5 },
+    { "section": "opensource", "name": "Lobsters", "url": "https://lobste.rs/newest.rss", "prio": 4 },
+    { "section": "opensource", "name": "Product Hunt", "url": "https://www.producthunt.com/feed", "prio": 3 }
+  ]
+}
